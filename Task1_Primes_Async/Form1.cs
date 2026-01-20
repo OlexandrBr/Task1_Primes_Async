@@ -38,7 +38,6 @@ namespace Task1_Primes_Async
             }
             catch (OperationCanceledException)
             {
-                // Натиснули "Стоп" — це нормально
             }
             finally
             {
@@ -65,8 +64,6 @@ namespace Task1_Primes_Async
                         listBoxPrimes.Items.Add(i);
                     }));
                 }
-
-                // маленька пауза, щоб UI не зависав
                 if (i % 500 == 0)
                     await Task.Delay(1, token);
             }
